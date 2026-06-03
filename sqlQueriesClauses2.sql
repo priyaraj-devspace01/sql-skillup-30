@@ -109,6 +109,63 @@ country
 FROM customers;
 
 
+-- Ct-) LIMIT(or TOP) -- select the limit(count) - in order to limit our data based on value we pass
+-- no of rows we want to see in th result
+SELECT * FROM orders LIMIT 3;
+
+-- Retrives the top 3 customers from customers table with highest score
+SELECT 
+first_name,
+score
+FROM customers
+ORDER BY score DESC
+LIMIT 3;
+
+-- REVERSE OF THE PREV PROBLEM
+SELECT 
+first_name, score
+FROM customers
+ORDER BY score asc
+LIMIT 2;
+
+
+-- get the 2 most recent orders: 
+SELECT * FROM orders
+ORDER BY order_date DESC
+LIMIT 2;
+
+-- ALL QUERY WITH CLAUSES AT ONCE
+-- Writing Order:
+--   SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY → LIMIT
+
+-- Execution Order:
+  -- FROM → WHERE → GROUP BY → HAVING → SELECT → DISTINCT → ORDER BY → LIMIT
+  
+  
+  
+-- mutli query 
+SELECT * FROM customers;
+SELECT * FROM orders;
+
+
+-- Static(fixed) values 
+SELECT 123 as static_num;
+SELECT "HELLO" as greet;
+
+-- USE
+SELECT 
+first_name, score,
+"default" as DEAF
+FROM customers;
+
+-- Execute the selection part
+
+-- SELECT
+-- * FROM customers. -- select and run to only get all data before WHERE clause 
+
+-- WHERE score > 40 ;
+
+
 
 
 
